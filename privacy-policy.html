@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrivaVault — Privacy Policy</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0f17; color: #e8eef7;
+         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 34px 0 8px; color: #cfe3d6; }
+  .meta { color: #8fa0b5; font-size: .9rem; margin-bottom: 24px; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: .95rem; }
+  th, td { border: 1px solid #22303f; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #131b26; }
+  code { background: #131b26; padding: 1px 5px; border-radius: 4px; }
+  a { color: #6fd3a1; }
+  footer { margin-top: 48px; color: #8fa0b5; font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>PrivaVault — Privacy Policy</h1>
+  <p class="meta">Applies to the PrivaVault Android app (<code>com.dn76.privatevault</code>) · Effective 27 October 2026 · Version 1.0</p>
+
+  <p>PrivaVault is an offline-first privacy tool: a secure encrypted vault and a multi-pass file
+  shredder. It has no user accounts, no cloud sync and no server that stores your content. This
+  policy explains exactly what stays on your device and what the third-party advertising and
+  purchase libraries collect.</p>
+
+  <h2>1. What we never collect or transmit</h2>
+  <ul>
+    <li><strong>Vault content</strong> — files you import are encrypted on this device
+        (AES-256-GCM inside a local <code>.pvault</code> container). We never receive them.</li>
+    <li><strong>Shredder targets</strong> — the files you select are overwritten and deleted
+        locally; no copy, name or hash is transmitted.</li>
+    <li><strong>Your PIN, recovery phrase and encryption keys</strong> — derived and stored
+        locally (Android Keystore); we cannot read them and cannot recover them for you.</li>
+    <li><strong>Shred certificates</strong> — generated locally; written out only when you pick a
+        destination.</li>
+  </ul>
+  <p>The app never uploads any of the above. Two features can move data <em>at your request</em>:
+  a certificate/archive export (you choose the destination, which may be a cloud drive) and the
+  device-to-device migration (section 4a, local network only). Those are your actions, not ours.</p>
+
+  <h2>2. What we do not collect</h2>
+  <p>No account, name, email address, phone number, contacts, photos library listing, vault file
+  names or vault file content. The app does not create a profile of you.</p>
+  <p><strong>About the location permission.</strong> On Android 12 and older, Android itself
+  requires the <em>fine location</em> permission before an app may start a local-only Wi-Fi
+  hotspot. PrivaVault asks for it only when you start a device-to-device migration and it never
+  calls the location APIs: we do not read, store or transmit your device position. The ad SDK is a
+  separate matter — it derives an <em>approximate</em> location from your IP address, as described
+  in section 3. On Android 13+ the app uses the nearby-Wi-Fi permission instead, declared with the
+  platform's <code>neverForLocation</code> flag.</p>
+
+  <h2>3. Third-party SDKs and what they collect</h2>
+  <table>
+    <tr><th>SDK</th><th>Purpose</th><th>Data involved</th></tr>
+    <tr>
+      <td>Google AdMob</td>
+      <td>Optional rewarded ads that refill Free shred passes</td>
+      <td>Advertising ID, device and app information, IP address (approximate location derived
+          from it), ad interaction data, and the Topics/Attribution signals of the Privacy
+          Sandbox. Governed by Google's own policies.</td>
+    </tr>
+    <tr>
+      <td>RevenueCat</td>
+      <td>Subscription / lifetime-license management</td>
+      <td>A pseudonymous app user identifier and purchase/subscription status. No payment card
+          data reaches us or RevenueCat — purchases are processed by Google Play.</td>
+    </tr>
+    <tr>
+      <td>Google User Messaging Platform (UMP)</td>
+      <td>Ad consent (EEA/UK) and privacy options</td>
+      <td>Your consent choice and a consent identifier. The consent form is shown when the law
+          requires it; to change a choice later, reset/delete your advertising ID in Android
+          settings and reopen the app (the form is requested again when required).</td>
+    </tr>
+    <tr>
+      <td>Google Play Billing</td>
+      <td>Processing payments</td>
+      <td>Handled entirely by Google Play under Google's terms.</td>
+    </tr>
+  </table>
+  <p><strong>Not included in this version:</strong> crash reporting or product analytics SDKs.
+  If a future version adds one, this policy and the store Data&nbsp;Safety declaration will be
+  updated before that version ships.</p>
+
+  <h2>4. Permissions and why they exist</h2>
+  <ul>
+    <li><strong>Storage Access Framework picker</strong> — you choose which files to shred or
+        import. The app has no broad storage permission and uses only the per-file grants the
+        system hands back; those grants are not persisted after the operation.</li>
+    <li><strong>Notifications</strong> (Android 13+) — progress and completion of a shred or
+        import, including when the app is in the background.</li>
+    <li><strong>Internet, network state</strong> — ads, purchase verification, and the
+        peer-to-peer migration socket. Vault and shredder operations work fully offline.</li>
+    <li><strong>NFC</strong> — a short tap to exchange a small pairing handshake between the two
+        devices during a migration. No payment, tag or external NFC data is involved.</li>
+    <li><strong>Nearby Wi-Fi / Wi-Fi state</strong> — starting or joining the local-only hotspot
+        that carries the migration stream between your two devices. The stream never leaves your
+        local network and no server is involved.</li>
+    <li><strong>Foreground service (data sync) + wake lock</strong> — so a shred, import or
+        migration that you started finishes even if the screen turns off.</li>
+  </ul>
+
+  <h2>4a. Device-to-device migration</h2>
+  <p>When you choose to move your vault to a new phone, the two devices pair over NFC, one of
+  them opens a local-only Wi-Fi hotspot, and the encrypted vault is streamed directly to the
+  other device over that local network. Nothing passes through us or any third party; both
+  devices must be physically present and the transfer is started by you.</p>
+
+  <h2>5. Retention and deletion</h2>
+  <ul>
+    <li>Everything the app stores lives in its private app storage. Uninstalling PrivaVault
+        removes it. Shredded files are destroyed permanently and cannot be recovered.</li>
+    <li>Ad-related data is retained by Google according to your Google ad settings; you can
+        reset or delete your advertising ID in Android settings.</li>
+    <li>Purchase records are retained by Google Play (and RevenueCat) as required for billing
+        and tax obligations.</li>
+  </ul>
+  <p><strong>Deletion requests.</strong> Because the app holds your content only on your device,
+  the fastest deletion is uninstalling it; nothing else needs to be asked of us. For the limited
+  data described in section 3 you can request deletion through the contact channel in
+  section 10, and you can reset or delete your advertising ID in Android settings at any time.</p>
+
+  <h2>6. Your controls</h2>
+  <ul>
+    <li>Turn off ad personalization (Android Settings → Privacy → Ads), or simply do not use the
+        optional rewarded ads — the app is fully usable without them.</li>
+    <li>Manage or cancel a subscription in Google Play → Subscriptions.</li>
+    <li>Delete all local data by uninstalling the app. There is no server-side copy to erase.</li>
+  </ul>
+
+  <h2>7. Children</h2>
+  <p>PrivaVault is not directed to children under 13 and does not knowingly collect personal
+  information from them.</p>
+
+  <h2>8. International users</h2>
+  <p>The app itself transfers no personal data to us. The SDKs listed in section 3 process data
+  in the regions described in their own privacy policies. Where local law grants you rights of
+  access, correction or deletion, those rights apply to the data held by those providers; the
+  app holds your content only on your device.</p>
+
+  <h2>9. Changes</h2>
+  <p>If this policy changes materially, the effective date above is updated and the new version
+  is published at this URL before the affected app version is released.</p>
+
+  <h2>10. Operator and contact</h2>
+  <p><strong>Operator:</strong> PrivaVault is published by the independent developer behind
+  <a href="https://github.com/dattien96">github.com/dattien96</a>, based in Vietnam.</p>
+  <p><strong>Data requests and contact:</strong>
+  <span id="contact-email">CONTACT_PLACEHOLDER</span> — replace with a monitored e-mail address
+  before publishing. This channel is used for privacy and data-deletion requests.</p>
+  <p>Questions: use the address above. Please do not post personal data in a public issue
+  tracker.</p>
+
+  <footer>PrivaVault · <a href="./terms-of-service.html">Terms of Use</a> · <a href="./privacy-policy.html">Privacy Policy</a></footer>
+</main>
+</body>
+</html>
