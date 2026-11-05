@@ -12,6 +12,7 @@
   h1 { font-size: 1.7rem; margin: 0 0 4px; }
   h2 { font-size: 1.15rem; margin: 34px 0 8px; color: #a5f3fc; }
   .meta { color: #94a3b8; font-size: .9rem; margin-bottom: 24px; }
+  .warn { border-left: 3px solid #e0a34a; background: #1a1408; padding: 12px 14px; margin: 18px 0; }
   ul { padding-left: 22px; }
   li { margin: 6px 0; }
   table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: .95rem; }
@@ -33,7 +34,11 @@
   left in place unless you explicitly delete it through the app. The app is a utility, not a backup service:
   keep your own copies of anything you cannot lose.</p>
 
-  <h2>2. Plans and purchases</h2>
+    <div class="warn">
+    <strong>2. Original media deletion and backup responsibility.</strong> GhostExif creates cleaned copies and leaves your originals intact by default. If you explicitly choose to delete original files via the app's media deletion prompts, that deletion is performed directly through Android's system MediaStore and cannot be undone through this app. You are solely responsible for keeping independent backups of any media you cannot afford to lose.
+  </div>
+
+  <h2>3. Plans and purchases</h2>
   <ul>
     <li><strong>Free plan:</strong> photo cleaning in batches of up to a fixed number of files per run, with a
       daily action limit that rewarded videos can extend.</li>
@@ -46,7 +51,7 @@
       it. Cleaning keeps working while that check succeeds.</li>
   </ul>
 
-  <h2>3. Acceptable use</h2>
+  <h2>4. Acceptable use</h2>
   <ul>
     <li>Use the app only on files you own or are allowed to modify.</li>
     <li>Do not use it to remove metadata in order to deceive a court, an insurer, a platform or another
@@ -55,26 +60,30 @@
       modified build.</li>
   </ul>
 
-  <h2>4. No warranty on the outcome</h2>
+  <h2>5. No warranty on the outcome</h2>
   <p>Metadata removal is best-effort: a file may contain vendor-specific or malformed data that the app
   reports but cannot fully remove, and some apps re-add metadata when they re-share a file. GhostExif tells
   you what it found and what it removed; it does not guarantee that a third party cannot recover information
   by other means (for example, from the pixels themselves or from a copy you kept).</p>
 
-  <h2>5. Availability and changes</h2>
+  <h2>6. Availability and changes</h2>
   <p>The app is provided as-is, without warranty of uninterrupted or error-free operation. Features may change
   between versions; a change that affects what you paid for will be stated in the release notes.</p>
 
-  <h2>6. Limitation of liability</h2>
+  <h2>7. Limitation of liability</h2>
   <p>To the extent permitted by law, GhostExif is not liable for indirect or consequential loss, including
   loss of files, loss of data or disclosure caused by a copy you kept, by a third-party app, or by a device
   that is already compromised.</p>
 
-  <h2>7. Privacy</h2>
+  <h2>8. Privacy</h2>
   <p>See the <a href="privacy-policy.html">Privacy Policy</a>. In short: files are processed on the device and
   never uploaded.</p>
 
-  <h2>8. Contact</h2>
+  <h2>9. Governing law</h2>
+  <p>These terms are governed by the laws of the Socialist Republic of Vietnam, without regard to conflict-of-law rules.</p>
+
+  <h2>10. Operator and contact</h2>
+  <p>GhostExif is published by an independent developer based in Vietnam.</p>
   <p><strong>Contact:</strong> <a id="contact-email" href="mailto:redsquirrelstudio0525@gmail.com">redsquirrelstudio0525@gmail.com</a></p>
 
   <footer>GhostExif · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a> · package com.dn76.ghostexif · This page is static and carries no tracker.</footer>
