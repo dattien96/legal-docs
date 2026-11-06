@@ -1,0 +1,17 @@
+# app-ads.txt — template cho PrivaVault + GhostExif (SEC-2.8).
+#
+# CÁCH DÙNG:
+# 1. Thay pub-XXXXXXXXXXXXXXXX bên dưới bằng Publisher ID thật
+#    (AdMob console → Settings → Publisher ID). Hai app chung 1 tài
+#    khoản AdMob thì chỉ cần 1 dòng; khác tài khoản thì thêm 1 dòng
+#    cho mã thứ hai.
+# 2. Upload file này (KHÔNG đổi tên) lên ROOT domain của website khai
+#    trên Play Store listing, ví dụ:
+#      https://dattien96.github.io/app-ads.txt
+#    Đặt trong thư mục con (/legal-docs/...) là AdMob KHÔNG thấy.
+# 3. Mở URL trên trình duyệt ẩn danh kiểm tra, rồi đợi ~24h để AdMob
+#    hết cảnh báo.
+#
+# Mã pub-xxx là CÔNG KHAI theo thiết kế (ai cũng đọc được file này).
+
+google.com, pub-3880951354462359, DIRECT, f08c47fec0942fa0
